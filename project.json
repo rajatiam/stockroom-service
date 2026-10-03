@@ -13,5 +13,17 @@
     "reorder_level": 10
   },
   "kind": "inventory",
-  "port": 8102
+  "port": 8102,
+  "description": "Track stock levels and catch reorder needs before they become shortages.",
+  "accent": "#2563eb",
+  "stack": [
+    "Python",
+    "FastAPI",
+    "Angular",
+    "TypeScript",
+    "SQLite",
+    "Docker",
+    "Kubernetes",
+    "GitHub Actions"
+  ]
 }

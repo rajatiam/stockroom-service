@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: 02-stockroom-data
+  name: stockroom-service-data
 spec:
   accessModes: [ReadWriteOnce]
   resources:
@@ -11,18 +11,18 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 02-stockroom
+  name: stockroom-service
 spec:
   replicas: 1
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: 02-stockroom
+      app: stockroom-service
   template:
     metadata:
       labels:
-        app: 02-stockroom
+        app: stockroom-service
     spec:
       securityContext:
         runAsNonRoot: true
@@ -30,7 +30,7 @@ spec:
         fsGroup: 10001
       containers:
         - name: app
-          image: 02-stockroom:local
+          image: stockroom-service:local
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8102
@@ -60,15 +60,15 @@ spec:
       volumes:
         - name: data
           persistentVolumeClaim:
-            claimName: 02-stockroom-data
+            claimName: stockroom-service-data
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: 02-stockroom
+  name: stockroom-service
 spec:
   selector:
-    app: 02-stockroom
+    app: stockroom-service
   ports:
     - port: 80
       targetPort: 8102

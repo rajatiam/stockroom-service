@@ -1,5 +1,5 @@
 {
-  "name": "Stockroom",
+  "name": "Stockroom Service",
   "skills": "Inventory transactions, validation, low-stock reporting",
   "entity": "item",
   "fields": [
@@ -25,5 +25,7 @@
     "Docker",
     "Kubernetes",
     "GitHub Actions"
-  ]
+  ],
+  "slug": "stockroom-service",
+  "engineering_version": "3.0.0"
 }

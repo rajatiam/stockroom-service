@@ -1,0 +1,17 @@
+{
+  "name": "Stockroom",
+  "skills": "Inventory transactions, validation, low-stock reporting",
+  "entity": "item",
+  "fields": [
+    "name",
+    "quantity",
+    "reorder_level"
+  ],
+  "example": {
+    "name": "USB keyboard",
+    "quantity": 8,
+    "reorder_level": 10
+  },
+  "kind": "inventory",
+  "port": 8102
+}
